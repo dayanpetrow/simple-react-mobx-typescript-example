@@ -1,4 +1,4 @@
-import { observable } from "mobx";
+import { observable, action } from "mobx";
 
 export interface Transaction {
   date: Date;
@@ -11,8 +11,7 @@ class TransactionsStore {
   @observable quantityOwned = 0;
   @observable balance = 1000;
 
-  constructor() {}
-
+  @action
   handleBuyShares = (quantity: number, buyPrice: number) => {
     const cost = quantity * buyPrice;
     this.balance = this.balance - cost;
@@ -30,6 +29,7 @@ class TransactionsStore {
     this.transactions = [...this.transactions, ...newTransactions];
   };
 
+  @action
   handleSellShares = (quantity: number, sellPrice: number) => {
     const revenue = quantity * sellPrice;
     this.balance = this.balance + revenue;
