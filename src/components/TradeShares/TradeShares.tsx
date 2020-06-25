@@ -58,7 +58,7 @@ export default function TradeShares(props: TradeSharesProps) {
             <div className={"DynamicPrice"}>${buyPrice}</div>
             <div>
               <InputNumber
-                placeholder={"Quantitiy to buy"}
+                placeholder={"Quantity to buy"}
                 onChange={(value) => setBuyQuantity(value)}
                 value={buyQuantity}
                 min={1}
@@ -104,7 +104,7 @@ export default function TradeShares(props: TradeSharesProps) {
             <div className={"DynamicPrice"}>${sellPrice}</div>
             <div>
               <InputNumber
-                placeholder={"Quantitiy to sell"}
+                placeholder={"Quantity to sell"}
                 onChange={(value) => setSellQuantity(value)}
                 value={sellQuantity}
                 min={1}
