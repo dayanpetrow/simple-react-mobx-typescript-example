@@ -38,7 +38,7 @@ export default function TradeShares(props: TradeSharesProps) {
   }
 
   return (
-    <Wrapper isPriceDown={props.isPriceDown}>
+    <Wrapper isPriceDown={isPriceDown}>
       {/** Left Column => BUY */}
       <div className={"Column"}>
         <div className={"TradePanel"}>
@@ -50,7 +50,7 @@ export default function TradeShares(props: TradeSharesProps) {
               </div>
             </div>
             <div className={"Amount"}>
-              <DollarCircleOutlined /> {props.balance.toFixed(2)}
+              <DollarCircleOutlined /> {balance.toFixed(2)}
             </div>
           </div>
           <div className={"Content"}>
@@ -101,7 +101,7 @@ export default function TradeShares(props: TradeSharesProps) {
           </div>
           <div className={"Content"}>
             <div className={"Label"}>Price</div>
-            <div className={"DynamicPrice"}>${props.sellPrice}</div>
+            <div className={"DynamicPrice"}>${sellPrice}</div>
             <div>
               <InputNumber
                 placeholder={"Quantitiy to sell"}

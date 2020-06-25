@@ -1,4 +1,4 @@
-export interface AccountBalanceProps {
+export interface HeaderProps {
   toggleDarkMode: () => void;
   isDarkMode: boolean;
 }

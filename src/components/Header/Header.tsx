@@ -1,15 +1,15 @@
 import React from "react";
 import { Wrapper } from "./styled";
-import { AccountBalanceProps } from "./types";
-import { Button } from 'antd';
+import { HeaderProps } from "./types";
+import { Button } from "antd";
 
-export default function AccountBalance(props: AccountBalanceProps) {
+export default function Header(props: HeaderProps) {
   const { toggleDarkMode, isDarkMode } = props;
 
   return (
     <Wrapper>
       <div className={"Container"}>
-        <div className={"PageTitle"}>TradeApp</div>
+        <div className={"PageTitle"}>TradeAwesome</div>
         <Button onClick={toggleDarkMode} type={"primary"}>
           {isDarkMode ? "Light" : "Dark"}
         </Button>

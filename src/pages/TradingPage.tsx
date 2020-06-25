@@ -26,11 +26,11 @@ class TradingPage extends React.Component<TradingPageProps> {
         <TradeShares
           balance={transactionsStore!.balance}
           quantityOwned={transactionsStore!.quantityOwned}
+          handleBuyShares={transactionsStore!.handleBuyShares}
+          handleSellShares={transactionsStore!.handleSellShares}
           buyPrice={pricesStore!.buyPrice}
           sellPrice={pricesStore!.sellPrice}
           isPriceDown={pricesStore!.isPriceDown}
-          handleBuyShares={transactionsStore!.handleBuyShares}
-          handleSellShares={transactionsStore!.handleSellShares}
         />
 
         <TransactionsTable

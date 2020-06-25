@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.body};
     margin: 0;
     font-family: '${PRIMARY_FONT}', '${SECONDARY_FONT}';
-    color: ${props => props.theme.text};
+    color: ${(props) => props.theme.text};
   }
 
   .ant-input-number-handler-wrap {

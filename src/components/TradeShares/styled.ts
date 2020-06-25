@@ -86,6 +86,7 @@ export const Wrapper = styled.div<WrapperProps>`
         }
         .TotalPrice {
           margin-top: 12px;
+          font-size: 16px;
         }
         .ErrorMessage {
           color: ${(props) => props.theme.red};
