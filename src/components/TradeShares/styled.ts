@@ -1,9 +1,16 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+type WrapperProps = {
+  isPriceDown?: boolean,
+}
+
+export const Wrapper = styled.div<WrapperProps>`
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 
   .Column {
     display: flex;
@@ -12,35 +19,50 @@ export const Wrapper = styled.div`
     margin: 16px;
 
     .TradePanel {
-      
       width: 100%;
       background-color: black;
       display: flex;
       flex-direction: column;
+      background-color: ${(props) => props.theme.primaryBackground};
 
-      .Title {
+      .PanelHeader {
         width: 100%;
-        background-color: #313131;
-        text-align: center;
-        font-size: 24px;
+        background-color: ${(props) => props.theme.secondaryBackground};
         padding: 16px;
         box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .Title {
+          font-size: 24px;
+        }
+        .Amount {
+          font-size: 16px;
+        }
       }
 
       .Content {
         width: 100%;
         box-sizing: border-box;
-        background-color: #dedede;
         display: flex;
         flex-direction: column;
-        padding: 16px;
+        padding: 24px 16px;
         flex: 1;
         text-align: center;
+        .Label {
+          font-size: 16px;
+        }
+        .DynamicPrice {
+          font-size: 48px;
+          font-weight: bold;
+          line-height: 1.1;
+          color: ${(props) =>
+            props.isPriceDown ? props.theme.red : props.theme.green};
+        }
       }
 
       .ActionButton {
         display: flex;
-        background-color: yellow;
       }
     }
   }

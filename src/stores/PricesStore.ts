@@ -10,10 +10,11 @@ class PricesStore {
 
   constructor() {
     this.pricesService = new PricesService();
+    this.fetchPrices();
   }
 
   startPolling = () => {
-    this.intervalId = setInterval(this.fetchPrices, 1000);
+    this.intervalId = setInterval(this.fetchPrices, 3000);
   };
 
   stopPolling = () => {
