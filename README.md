@@ -1,4 +1,4 @@
-## Trading Application simulation
+## Trading Application simulation with React + MobX + TypeScript
 
 ![dark_theme](./demo/dark.png)
 ![light_theme](./demo/light.png)
