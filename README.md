@@ -1,3 +1,3 @@
 ## Trading Application simulation
 
-![dark_theme](./demo/dark.jpg)
+![dark_theme](./demo/dark.png)
