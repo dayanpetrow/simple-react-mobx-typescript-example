@@ -4,9 +4,12 @@ import { InputNumber } from "antd";
 const StyledInput = styled(InputNumber)`
   background: ${(props) => props.theme.input};
   border: none;
-  width: 200px;
-  margin: 8px 0;
-  color: ${props => props.theme.text}
+  width: 250px;
+  margin: 16px 0 8px 0;
+  color: ${(props) => props.theme.text};
+  .ant-input-number-input {
+    text-align: center;
+  }
 `;
 
 export default StyledInput;

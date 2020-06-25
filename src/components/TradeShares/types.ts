@@ -1,8 +1,9 @@
 export interface TradeSharesProps {
-  buyPrice?: number;
-  sellPrice?: number;
-  isPriceDown?: boolean;
-  quantityOwned?: number;
-  handleBuy?: (quantity: number, price: number) => void;
-  handleSell?: (quantity: number, price: number) => void;
+  balance: number;
+  buyPrice: number;
+  sellPrice: number;
+  isPriceDown: boolean;
+  quantityOwned: number;
+  handleBuyShares: (quantity: number, price: number) => void;
+  handleSellShares: (quantity: number, price: number) => void;
 }

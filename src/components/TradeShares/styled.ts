@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 type WrapperProps = {
-  isPriceDown?: boolean,
-}
+  isPriceDown?: boolean;
+};
 
 export const Wrapper = styled.div<WrapperProps>`
   width: 100%;
@@ -12,12 +12,25 @@ export const Wrapper = styled.div<WrapperProps>`
   flex-direction: row;
   justify-content: space-between;
 
+  @media (max-width: 919px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .Column {
     display: flex;
     width: 100%;
     max-width: 444px;
     margin: 16px;
-
+    @media (max-width: 919px) {
+      max-width: 100%;
+      width: 100%;
+      justtify-content: center;
+      align-items: center;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
     .TradePanel {
       width: 100%;
       background-color: black;
@@ -34,11 +47,21 @@ export const Wrapper = styled.div<WrapperProps>`
         justify-content: space-between;
         align-items: center;
         .Title {
-          font-size: 24px;
+          font-size: 28px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
         }
         .Amount {
-          font-size: 16px;
+          color: ${(props) => props.theme.blue};
+          font-size: 28px;
         }
+      }
+
+      .PriceChangeIcon {
+        margin-left: 18px;
+        color: ${(props) =>
+          props.isPriceDown ? props.theme.red : props.theme.green};
       }
 
       .Content {
@@ -51,6 +74,8 @@ export const Wrapper = styled.div<WrapperProps>`
         text-align: center;
         .Label {
           font-size: 16px;
+          opacity: 0.5;
+          color: ${(props) => props.theme.text};
         }
         .DynamicPrice {
           font-size: 48px;
@@ -59,10 +84,17 @@ export const Wrapper = styled.div<WrapperProps>`
           color: ${(props) =>
             props.isPriceDown ? props.theme.red : props.theme.green};
         }
+        .TotalPrice {
+          margin-top: 12px;
+        }
+        .ErrorMessage {
+          color: ${(props) => props.theme.red};
+        }
       }
 
       .ActionButton {
         display: flex;
+        padding: 16px;
       }
     }
   }

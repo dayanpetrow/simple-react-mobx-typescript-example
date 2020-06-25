@@ -1,7 +1,7 @@
 import * as React from "react";
 import { observer } from "mobx-react";
 import { TradingPageProps } from "./types";
-import { AccountBalance, TradeShares } from "../components";
+import { Header, TradeShares, TransactionsTable } from "../components";
 
 @observer
 class TradingPage extends React.Component<TradingPageProps> {
@@ -16,20 +16,26 @@ class TradingPage extends React.Component<TradingPageProps> {
   render() {
     const { pricesStore, transactionsStore, themeStore } = this.props;
 
-    console.log(this.props);
-
     return (
       <>
-        <AccountBalance
-          balance={transactionsStore!.balance}
+        <Header
           toggleDarkMode={themeStore!.toggleDarkMode}
           isDarkMode={themeStore!.darkMode}
         />
 
         <TradeShares
-          buyPrice={pricesStore?.buyPrice}
-          sellPrice={pricesStore?.sellPrice}
-          isPriceDown={pricesStore?.isPriceDown}
+          balance={transactionsStore!.balance}
+          quantityOwned={transactionsStore!.quantityOwned}
+          buyPrice={pricesStore!.buyPrice}
+          sellPrice={pricesStore!.sellPrice}
+          isPriceDown={pricesStore!.isPriceDown}
+          handleBuyShares={transactionsStore!.handleBuyShares}
+          handleSellShares={transactionsStore!.handleSellShares}
+        />
+
+        <TransactionsTable
+          transactions={transactionsStore!.transactions}
+          balance={transactionsStore!.balance}
         />
       </>
     );

@@ -5,8 +5,8 @@ class PricesService {
 
   // mock starting prices
   constructor() {
-    this.buyPrice = 20;
-    this.sellPrice = 17;
+    this.buyPrice = 20.2;
+    this.sellPrice = 19.8;
     this.changeFactor = 0.115;
   }
 
@@ -15,7 +15,7 @@ class PricesService {
     let nextBuyPrice: number, nextSellPrice: number, isPriceDown: boolean;
 
     // mock real-time price change
-    if (Math.random() < 0.4) {
+    if (Math.random() < 0.35) {
       nextBuyPrice = this.buyPrice - Math.random() * this.changeFactor;
       nextSellPrice = this.sellPrice - Math.random() * this.changeFactor;
     } else {
@@ -33,7 +33,7 @@ class PricesService {
     nextSellPrice = parseFloat(nextSellPrice.toFixed(4));
 
     // did the price go down?
-    isPriceDown = this.buyPrice < nextBuyPrice;
+    isPriceDown = this.buyPrice > nextBuyPrice;
 
     // remember the new prices "on the backend"
     this.buyPrice = nextBuyPrice;
